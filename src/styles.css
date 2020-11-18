@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+body {
+	margin: 0;
+}
+
+.App {
+	font-family: sans-serif;
+	/* text-align: center; */
+}
+
+html {
+	scroll-behavior: smooth;
+}
