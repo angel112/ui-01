@@ -5,14 +5,17 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import NavBar from "./NavBar";
+import { ThemeProvider } from "./ThemeContext";
 
 export default function App() {
 	return (
 		<div className="App">
-			<NavBar />
-			<Home />
-			<About />
-			<Contact />
+			<ThemeProvider >
+				<NavBar />
+				<Home />
+				<About />
+				<Contact />
+			</ThemeProvider>
 		</div>
 	);
 }

@@ -1,34 +1,14 @@
-import React, { useState } from "react";
-import Typist from "react-typist";
+import React, { useContext } from "react";
 
 import styled from "styled-components";
+import { ThemeContext } from "./ThemeContext";
 
 const Home = () => {
-	const text = ["Hello", "How are you!!"];
-
-	const [index, setIndex] = useState(0);
-	const [typer, setTyper] = useState(text[index]);
-
-	const typeDoneHandle = () => {
-		console.log("here", text.length);
-		if (index < text.length) {
-			console.log("setting");
-			const i = index + 1;
-			console.log(i);
-			setIndex(i);
-			setTyper(text[i]);
-			console.log(typer, index);
-		}
-	};
-
+	const { toggle } = useContext(ThemeContext);
 	return (
 		<Section id="home">
-			<Typist onTypingDone={typeDoneHandle}>
-				<Typist.Delay ms={1000} />
-				<span>{typer}</span>
-				<Typist.Backspace count={typer.length} delay={1000} />
-				<Typist.Delay ms={1000} />
-			</Typist>
+			<h1>Home Page</h1>
+			<button onClick={() => toggle()}>Click Me!</button>
 		</Section>
 	);
 };
