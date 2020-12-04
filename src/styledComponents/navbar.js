@@ -13,10 +13,11 @@ export const Nav = styled.nav`
 	box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.25);
 	position: fixed;
 	width: 100vw;
-	background: rgba(255, 250, 250, 0.6);
+	background: ${(props) => (props.theme ? "black" : "white")};
 	height: 50px;
 	align-items: center;
 	z-index: 5;
+	color: ${(props) => (props.theme ? "white" : "black")};
 `;
 
 export const List = styled.ul`
@@ -34,11 +35,7 @@ export const Item = styled.li`
 
 export const A = styled.a`
 	font-family: ${font};
+	font-size: 20px;
 	text-decoration: none;
-	:hover {
-		color: green;
-	}
-	:visited {
-		color: black;
-	}
+	color: ${(props) => (props.theme ? "white" : "black")};
 `;
